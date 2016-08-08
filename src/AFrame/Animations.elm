@@ -65,7 +65,7 @@ begin value =
 
 
 {-| Direction of the animation (between from and to).
-One of alternate, alternateReverse, normal, reverse.
+    One of alternate, alternateReverse, normal, reverse.
 
     animation [ direction "reverse" ] []
 -}
@@ -93,7 +93,7 @@ easing value =
 
 
 {-| Determines effect of animation when not actively in play.
-One of backwards, both, forwards, none.
+    One of backwards, both, forwards, none.
 
     animation [ fill "rotation" ] []
 -}

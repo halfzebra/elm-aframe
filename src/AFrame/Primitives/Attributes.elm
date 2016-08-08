@@ -161,7 +161,8 @@ angle value =
     attribute "angle" (toString value)
 
 
-{-| -}
+{-| Amount the light dims along the distance of the light.
+-}
 decay : Float -> Attribute msg
 decay value =
     attribute "decay" (toString value)

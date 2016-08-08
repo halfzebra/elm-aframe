@@ -1,6 +1,6 @@
 module AFrame exposing (..)
 
-{-| A-Frame
+{-| [A-Frame](https://aframe.io/docs/0.2.0/guide/) is a open-source framework for creating 3D and virtual reality experiences on the web.
 
 # Scene
 @docs scene

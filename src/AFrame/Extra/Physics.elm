@@ -24,8 +24,8 @@ grid =
 
 
 {-| A freely-moving object. Dynamic bodies have mass,
-collide with other objects, bounce or slow during collisions,
-and fall if gravity is enabled.
+    collide with other objects, bounce or slow during collisions,
+    and fall if gravity is enabled.
 
     box [ dynamicBody ] []
 -}
@@ -35,8 +35,8 @@ dynamicBody =
 
 
 {-| A fixed-position or animated object.
-Other objects may collide with static bodies,
-but static bodies themselves are unaffected by gravity and collisions.
+    Other objects may collide with static bodies,
+    but static bodies themselves are unaffected by gravity and collisions.
 
     box [ staticBody ] []
 -}

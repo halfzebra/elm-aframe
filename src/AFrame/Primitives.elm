@@ -3,7 +3,6 @@ module AFrame.Primitives exposing (..)
 {-| A-Frame primitives.
 
 # Geometric primitives
-
 @docs box, cone, cylinder, plane, sphere, ring, torus
 
 # Scene primitives
@@ -15,7 +14,7 @@ import Html exposing (node, Html, Attribute)
 
 
 {-| The box primitive, formerly called <a-cube>,
-creates shapes such as boxes, cubes, or walls.
+    creates shapes such as boxes, cubes, or walls.
 -}
 box : List (Attribute msg) -> List (Html msg) -> Html msg
 box =
@@ -30,8 +29,8 @@ cone =
 
 
 {-| The cylinder primitive is an entity that
-prescribes the geometry with its geometric primitive set to cylinder.
-It can be used to create tubes and curved surfaces.
+    prescribes the geometry with its geometric primitive set to cylinder.
+    It can be used to create tubes and curved surfaces.
 -}
 cylinder : List (Attribute msg) -> List (Html msg) -> Html msg
 cylinder =
@@ -53,9 +52,9 @@ plane =
 
 
 {-| The sky primitive adds a background to a scene
-or display a 360-degree photo.
-It is an entity that prescribes a large sphere with the material
-mapped to the inside.
+    or display a 360-degree photo.
+    It is an entity that prescribes a large sphere with the material
+    mapped to the inside.
 -}
 sky : List (Attribute msg) -> List (Html msg) -> Html msg
 sky =
@@ -76,7 +75,7 @@ ring =
     node "a-ring"
 
 
-{-| he torus primitive creates a donut or circular tube shape.
+{-| The torus primitive creates a donut or circular tube shape.
 -}
 torus : List (Attribute msg) -> List (Html msg) -> Html msg
 torus =
