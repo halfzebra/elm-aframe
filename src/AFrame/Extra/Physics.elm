@@ -1,12 +1,21 @@
-module AFrame.Extra.Physics exposing (grid, dynamicBody, staticBody)
+module AFrame.Extra.Physics
+    exposing
+        ( grid
+        , dynamicBody
+        , staticBody
+        , kinematicBody
+        )
 
 {-| Components for A-Frame physics integration.
 
 # Primitives
 @docs grid
 
-# Attributes
+# Primitive attributes
 @docs dynamicBody, staticBody
+
+# Camera attributes
+@docs kinematicBody
 
 -}
 
@@ -43,3 +52,15 @@ dynamicBody =
 staticBody : Attribute msg
 staticBody =
     attribute "static-body" ""
+
+
+{-| Player-controlled body, which can move but is not affected (directly)
+    y the physics engine. Intended for use on the player's model.
+    Gravity and collisions are simulated,
+    without giving full control to the physics engine.
+
+    box [ staticBody ] []
+-}
+kinematicBody : Attribute msg
+kinematicBody =
+    attribute "kinematic-body" ""
