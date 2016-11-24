@@ -1,4 +1,4 @@
-module Aframe.Primitives.Camera exposing (..)
+module AFrame.Primitives.Camera exposing (..)
 
 {-| CAmera primitive.
 
