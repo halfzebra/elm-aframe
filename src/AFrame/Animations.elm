@@ -1,7 +1,7 @@
 module AFrame.Animations
     exposing
         ( animation
-        , animattribute
+        , attribute_
         , begin
         , direction
         , dur
@@ -19,7 +19,7 @@ using Graphics module.
 @docs animation
 
 # Animation attributes
-@docs animattribute, begin, direction, dur, easing, fill, from, repeat, to
+@docs attribute_, begin, direction, dur, easing, fill, from, repeat, to
 
 -}
 
@@ -50,8 +50,8 @@ animation =
 
     animation [ attribute "rotation" ] []
 -}
-animattribute : String -> Attribute msg
-animattribute value =
+attribute_ : String -> Attribute msg
+attribute_ value =
     attribute "attribute" value
 
 
