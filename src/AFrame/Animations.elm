@@ -12,8 +12,7 @@ module AFrame.Animations
         , to
         )
 
-{-| This module provides a set of helpers for generating Seierpinski fractal
-using Graphics module.
+{-| This module provides a set of functions for declaring A-Frame animations.
 
 # Definition
 @docs animation
