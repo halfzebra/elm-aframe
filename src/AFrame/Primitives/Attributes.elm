@@ -9,7 +9,7 @@ module AFrame.Primitives.Attributes exposing (..)
 @docs radius, radiusTop, radiusBottom, position, scale, rotation, height, width, depth, segmentsRadial
 
 # Light attributes
-@docs angle, decay, distance, exponent, groundColor, intensity, type'
+@docs angle, decay, distance, exponent, groundColor, intensity, type_
 
 -}
 
@@ -193,6 +193,6 @@ intensity value =
 
 
 {-| -}
-type' : Float -> Attribute msg
-type' value =
+type_ : Float -> Attribute msg
+type_ value =
     attribute "type" (toString value)
