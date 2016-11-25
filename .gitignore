@@ -90,3 +90,7 @@ repl-temp-*
 
 # Distribution
 dist
+
+# Webpack example
+examples/webpack/docs/*
+!examples/webpack/docs/.gitkeep
