@@ -1,8 +1,7 @@
-module Main exposing (..)
+module Geom exposing (..)
 
-import Html exposing (Html)
-import Color exposing (rgb, Color)
-import AFrame exposing (scene, entity)
+import MyColor exposing (..)
+import Html exposing (..)
 import AFrame.Animations
     exposing
         ( animation
@@ -23,7 +22,8 @@ import AFrame.Primitives.Attributes
         , position
         , segmentsRadial
         )
-
+import AFrame exposing (scene, entity)
+import Html.Events exposing (onClick)
 
 {-| Calculate scale factor for x axis of a triangular prism,
 to get a prism with a proper shape.
@@ -34,32 +34,19 @@ heightFromPrismRadius : Float -> Float
 heightFromPrismRadius radius =
     radius / ((sqrt 3) / 3)
 
+cursorbox = box [ position 0 0 2 ][]
 
-orange : Color
-orange =
-    rgb 240 173 0
+switchon : String -> String -> Html.Attribute msg -> Html.Attribute msg
+switchon compare model orgcolor =
+    let 
+        acolor = if compare == model then (color red)
+            else orgcolor
+        _ = Debug.log "Color" acolor
+    in
+        acolor
+    
 
-
-grey : Color
-grey =
-    rgb 90 99 120
-
-
-green : Color
-green =
-    rgb 127 209 59
-
-
-blue : Color
-blue =
-    rgb 6 181 204
-
-
-main : Html msg
-main =
-    scene
-        []
-        [ entity []
+logo msg model = entity []
             [ animation
                 [ attribute_ "rotation"
                 , dur 10000
@@ -73,9 +60,10 @@ main =
                 [ radius 1
                 , segmentsRadial 3
                 , scale (heightFromPrismRadius 1) 1 1
-                , color blue
+                , switchon "bottom-blue" model.active (color blue)
                 , rotation -90 0 0
                 , position 0 0 0
+                , onClick (msg "bottom-blue")
                 ]
                 []
             , cylinder
@@ -85,6 +73,7 @@ main =
                 , color blue
                 , rotation -135 -90 90
                 , position 1 2 0
+                , onClick (msg "top-blue")
                 ]
                 []
             , cylinder
@@ -145,4 +134,3 @@ main =
                     []
                 ]
             ]
-        ]
