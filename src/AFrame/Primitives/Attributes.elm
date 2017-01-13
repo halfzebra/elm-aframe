@@ -196,3 +196,20 @@ intensity value =
 type_ : Float -> Attribute msg
 type_ value =
     attribute "type" (toString value)
+
+
+vrmodeui : Bool -> Attribute msg
+vrmodeui enabled =
+    let
+        value =
+            case enabled of
+                True ->
+                    "true"
+
+                False ->
+                    "false"
+
+        attribstring =
+            "enabled: " ++ value
+    in
+        attribute "vm-mode-ui" attribstring
