@@ -80,3 +80,13 @@ ring =
 torus : List (Attribute msg) -> List (Html msg) -> Html msg
 torus =
     node "a-torus"
+
+
+assets : List (Attribute msg) -> List (Html msg) -> Html msg
+assets =
+    node "a-assets"
+
+
+image : List (Attribute msg) -> List (Html msg) -> Html msg
+image =
+    node "a-image"
