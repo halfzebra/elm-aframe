@@ -44,7 +44,7 @@ shader value =
 {-| -}
 src : String -> Attribute msg
 src value =
-    attribute "shader" value
+    attribute "src" value
 
 
 {-| -}
