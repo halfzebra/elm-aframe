@@ -7,7 +7,7 @@ import AFrame.Animations
     exposing
         ( animation
         , easing
-        , attribute'
+        , attribute_
         , dur
         , fill
         , to
@@ -61,7 +61,7 @@ main =
         []
         [ entity []
             [ animation
-                [ attribute' "rotation"
+                [ attribute_ "rotation"
                 , dur 10000
                 , easing "linear"
                 , fill "forwards"
