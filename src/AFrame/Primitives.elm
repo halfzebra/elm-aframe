@@ -3,10 +3,13 @@ module AFrame.Primitives exposing (..)
 {-| A-Frame primitives.
 
 # Geometric primitives
-@docs box, cone, cylinder, plane, sphere, ring, torus, assets, image
+@docs box, cone, cylinder, plane, sphere, ring, torus, image
 
 # Scene primitives
 @docs sky, light
+
+# Asset management
+@docs assets, assetitem
 
 -}
 
