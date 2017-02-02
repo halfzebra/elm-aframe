@@ -3,7 +3,7 @@ module AFrame.Primitives exposing (..)
 {-| A-Frame primitives.
 
 # Geometric primitives
-@docs box, cone, cylinder, plane, sphere, ring, torus
+@docs box, cone, cylinder, plane, sphere, ring, torus, assets, image
 
 # Scene primitives
 @docs sky, light
@@ -82,11 +82,25 @@ torus =
     node "a-torus"
 
 
+{-| The assets group is used to store assets that are pre-loaded
+-}
 assets : List (Attribute msg) -> List (Html msg) -> Html msg
 assets =
     node "a-assets"
 
 
+{-| An individual asset item. Asset items load an asset up front
+and can be referenced as a source later on. Use a src attribute
+to define what to load and specify an id which is used later on
+to use this asset as a source.
+-}
+assetitem : List (Attribute msg) -> List (Html msg) -> Html msg
+assetitem =
+    node "a-asset-item"
+
+
+{-| Image node
+-}
 image : List (Attribute msg) -> List (Html msg) -> Html msg
 image =
     node "a-image"
