@@ -8,6 +8,9 @@ module AFrame.Primitives exposing (..)
 # Scene primitives
 @docs sky, light
 
+# Asset management
+@docs assets, image
+
 -}
 
 import Html exposing (node, Html, Attribute)
@@ -82,11 +85,15 @@ torus =
     node "a-torus"
 
 
+{-| We place assets within `<a-assets>`, and we place `<a-assets>` within `<a-scene>`.
+-}
 assets : List (Attribute msg) -> List (Html msg) -> Html msg
 assets =
     node "a-assets"
 
 
+{-| The image primitive shows an image on a flat plane.
+-}
 image : List (Attribute msg) -> List (Html msg) -> Html msg
 image =
     node "a-image"

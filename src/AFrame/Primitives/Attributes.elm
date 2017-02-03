@@ -11,6 +11,9 @@ module AFrame.Primitives.Attributes exposing (..)
 # Light attributes
 @docs angle, decay, distance, exponent, groundColor, intensity, type_
 
+# Scene attributes
+@docs vrModeUi
+
 -}
 
 import String exposing (toLower)
@@ -198,8 +201,11 @@ type_ value =
     attribute "type" (toString value)
 
 
-vrmodeui : Bool -> Attribute msg
-vrmodeui enabled =
+{-| The vr-mode-ui component toggles UI such as an Enter VR button, compatibility modal, and orientation modal for mobile.
+The vr-mode-ui component applies only to the `<a-scene>` element.
+-}
+vrModeUi : Bool -> Attribute msg
+vrModeUi enabled =
     let
         value =
             case enabled of
