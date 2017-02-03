@@ -9,7 +9,7 @@ module AFrame.Primitives exposing (..)
 @docs sky, light
 
 # Asset management
-@docs assets, assetitem
+@docs assets, assetItem, image
 
 -}
 
@@ -97,12 +97,12 @@ and can be referenced as a source later on. Use a src attribute
 to define what to load and specify an id which is used later on
 to use this asset as a source.
 -}
-assetitem : List (Attribute msg) -> List (Html msg) -> Html msg
-assetitem =
+assetItem : List (Attribute msg) -> List (Html msg) -> Html msg
+assetItem =
     node "a-asset-item"
 
 
-{-| Image node
+{-| The image primitive shows an image on a flat plane.
 -}
 image : List (Attribute msg) -> List (Html msg) -> Html msg
 image =

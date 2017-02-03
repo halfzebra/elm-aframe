@@ -2,6 +2,7 @@ module MyColor exposing (..)
 
 import Color exposing (rgb, Color)
 
+
 orange : Color
 orange =
     rgb 200 173 0
@@ -20,9 +21,8 @@ green =
 blue : Color
 blue =
     rgb 6 181 204
-    
+
+
 red : Color
-red = 
+red =
     rgb 255 0 0
-
-
