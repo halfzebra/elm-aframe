@@ -32,9 +32,9 @@ grid =
     node "a-grid"
 
 
-{-| A freely-moving object. Dynamic bodies have mass,
-    collide with other objects, bounce or slow during collisions,
-    and fall if gravity is enabled.
+{-| A freely-moving object.
+    Dynamic bodies have mass, collide with other objects,
+    bounce or slow during collisions, and fall if gravity is enabled.
 
     box [ dynamicBody ] []
 -}
@@ -55,11 +55,11 @@ staticBody =
 
 
 {-| Player-controlled body, which can move but is not affected (directly)
-    y the physics engine. Intended for use on the player's model.
+    by the physics engine. Intended for use on the player's model.
     Gravity and collisions are simulated,
     without giving full control to the physics engine.
 
-    box [ staticBody ] []
+    box [ kinematicBody ] []
 -}
 kinematicBody : Attribute msg
 kinematicBody =

@@ -1,6 +1,6 @@
 module AFrame.Primitives.Camera exposing (..)
 
-{-| CAmera primitive.
+{-| Camera primitive.
 
 # Primitives
 @docs camera
