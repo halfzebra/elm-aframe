@@ -112,11 +112,11 @@ from value =
 
 {-| Repeat count or indefinite.
 
-    animation [ repeat 5000 ] []
+    animation [ repeat "5000" ] []
 -}
-repeat : Int -> Attribute msg
+repeat : String -> Attribute msg
 repeat value =
-    attribute "repeat" (toString value)
+    attribute "repeat" value
 
 
 {-| Ending value. Must be specified.
