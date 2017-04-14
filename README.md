@@ -4,7 +4,7 @@ This module brings declarative WebVR framework [A-Frame](https://aframe.io/) to 
 
 ## Tutorials
 
-[Easy VR with Elm and A-Frame](https://medium.com/@tilman_s/easy-vr-with-elm-and-a-frame-a5c72cfb9945) by [@tilmans](https://github.com/tilmans)
+[Simple VR with Elm and A-Frame](https://github.com/tilmans/elm-aframe-example) by [@tilmans](https://github.com/tilmans)
 
 ## Running examples
 
