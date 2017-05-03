@@ -63,7 +63,7 @@ logo msg model =
             , easing "linear"
             , fill "forwards"
             , to "0 360 0"
-            , repeat 10000
+            , repeat "10000"
             ]
             []
         , cylinder
