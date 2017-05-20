@@ -3,7 +3,7 @@ module AFrame.Primitives exposing (..)
 {-| A-Frame primitives.
 
 # Geometric primitives
-@docs box, cone, cylinder, plane, sphere, ring, torus, image
+@docs box, cone, cylinder, plane, sphere, ring, torus, image, text
 
 # Scene primitives
 @docs sky, light
@@ -107,3 +107,10 @@ assetItem =
 image : List (Attribute msg) -> List (Html msg) -> Html msg
 image =
     node "a-image"
+
+
+{-| The text primitive displays a text.
+-}
+text : List (Attribute msg) -> List (Html msg) -> Html msg
+text =
+    node "a-text"
