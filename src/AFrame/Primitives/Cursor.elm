@@ -6,7 +6,7 @@ module AFrame.Primitives.Cursor exposing (..)
 @docs cursor
 
 # Attributes
-@docs fuse, maxDistance, timeout
+@docs fuse, maxDistance, timeout, raycaster
 
 -}
 
@@ -42,3 +42,10 @@ maxDistance value =
 timeout : Int -> Attribute msg
 timeout value =
     attribute "timeout" (toString value)
+
+
+{-| Customize the raycasting pieces of the cursor.
+-}
+raycaster : String -> Attribute msg
+raycaster value =
+    attribute "raycaster" (toString value)
