@@ -6,7 +6,7 @@ module AFrame.Primitives exposing (..)
 @docs box, cone, cylinder, plane, sphere, ring, torus, image, text
 
 # Scene primitives
-@docs sky, light
+@docs sky
 
 # Asset management
 @docs assets, assetItem, image
@@ -38,13 +38,6 @@ cone =
 cylinder : List (Attribute msg) -> List (Html msg) -> Html msg
 cylinder =
     node "a-cylinder"
-
-
-{-| The light primitive adjusts the lighting setup of the scene.
--}
-light : List (Attribute msg) -> List (Html msg) -> Html msg
-light =
-    node "a-light"
 
 
 {-| The plane primitive creates flat surfaces.

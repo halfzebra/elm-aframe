@@ -1,5 +1,5 @@
 {
-    "version": "2.1.0",
+    "version": "3.0.0",
     "summary": "Elm integration for A-Frame",
     "repository": "https://github.com/halfzebra/elm-aframe.git",
     "license": "MIT",
@@ -13,6 +13,7 @@
         "AFrame.Primitives.Attributes",
         "AFrame.Primitives.Camera",
         "AFrame.Primitives.Cursor",
+        "AFrame.Primitives.Light",
         "AFrame.Extra.Physics"
     ],
     "dependencies": {
