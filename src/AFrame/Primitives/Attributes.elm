@@ -121,7 +121,7 @@ scale x y z =
 
 
 {-| -}
-rotation : Int -> Int -> Int -> Attribute msg
+rotation : Float -> Float -> Float -> Attribute msg
 rotation x y z =
     [ x, y, z ]
         |> List.map toString
