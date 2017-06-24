@@ -24,6 +24,7 @@ module AFrame.Animations
 
 import Html exposing (node, Html, Attribute)
 import Html.Attributes exposing (attribute)
+import Math.Vector3 as Vector3 exposing (Vec3)
 
 
 type Direction
@@ -151,13 +152,17 @@ fill value =
 
     animation [ from "0 120 0" ] []
 -}
-from : Float -> Float -> Float -> Attribute msg
-from x y z =
-    [ x, y, z ]
-        |> List.map toString
-        |> List.intersperse " "
-        |> String.concat
-        |> attribute "from"
+from : Vec3 -> Attribute msg
+from position =
+    let
+        ( x, y, z ) =
+            Vector3.toTuple position
+    in
+        [ x, y, z ]
+            |> List.map toString
+            |> List.intersperse " "
+            |> String.concat
+            |> attribute "from"
 
 
 {-| Repeat count or indefinite.
@@ -183,10 +188,14 @@ repeat value =
 
     animation [ to "0 360 0" ] []
 -}
-to : Float -> Float -> Float -> Attribute msg
-to x y z =
-    [ x, y, z ]
-        |> List.map toString
-        |> List.intersperse " "
-        |> String.concat
-        |> attribute "to"
+to : Vec3 -> Attribute msg
+to position =
+    let
+        ( x, y, z ) =
+            Vector3.toTuple position
+    in
+        [ x, y, z ]
+            |> List.map toString
+            |> List.intersperse " "
+            |> String.concat
+            |> attribute "to"
