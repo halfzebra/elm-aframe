@@ -1,8 +1,8 @@
 module Main exposing (..)
 
 import Html exposing (..)
-import Html.Events exposing (onClick)
 import Geom exposing (..)
+import Math.Vector3 exposing (vec3)
 import AFrame.Primitives.Cursor exposing (..)
 import AFrame.Primitives.Camera exposing (..)
 import AFrame exposing (scene)
@@ -47,7 +47,7 @@ update msg model =
 view : Model -> Html Msg
 view model =
     scene []
-        [ camera [ position 0 0 5 ]
+        [ camera [ position (vec3 0 0 5) ]
             [ cursor [ fuse True ]
                 [ cursorbox
                 ]

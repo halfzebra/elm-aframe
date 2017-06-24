@@ -10,6 +10,9 @@ module AFrame.Animations
         , from
         , repeat
         , to
+        , Fill(..)
+        , Direction(..)
+        , Repeat(..)
         )
 
 {-| This module provides a set of functions for declaring A-Frame animations.
@@ -20,6 +23,9 @@ module AFrame.Animations
 # Animation attributes
 @docs attribute_, begin, direction, dur, easing, fill, from, repeat, to
 
+# Types
+@docs Fill, Direction, Repeat
+
 -}
 
 import Html exposing (node, Html, Attribute)
@@ -27,6 +33,7 @@ import Html.Attributes exposing (attribute)
 import Math.Vector3 as Vector3 exposing (Vec3)
 
 
+{-| -}
 type Direction
     = Alternate
     | AlternateReverse
@@ -34,6 +41,7 @@ type Direction
     | Reverse
 
 
+{-| -}
 type Fill
     = Backwards
     | Both
@@ -41,6 +49,7 @@ type Fill
     | None
 
 
+{-| -}
 type Repeat
     = Number Int
     | Repeat
