@@ -69,7 +69,7 @@ main =
                 , easing "linear"
                 , fill Forwards
                 , to (vec3 0 360 0)
-                , repeat (Number 10000)
+                , repeat (Times 10000)
                 ]
                 []
             , cylinder

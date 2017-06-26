@@ -51,7 +51,7 @@ type Fill
 
 {-| -}
 type Repeat
-    = Number Int
+    = Times Int
     | Repeat
     | Indefinite
 
@@ -181,7 +181,7 @@ from position =
 repeat : Repeat -> Attribute msg
 repeat value =
     (case value of
-        Number n ->
+        Times n ->
             toString n
 
         Repeat ->
