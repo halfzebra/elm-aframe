@@ -1,0 +1,27 @@
+{
+  "name": "elm-aframe",
+  "version": "1.0.0",
+  "description": "This module brings declarative WebVR framework [A-Frame](https://aframe.io/) to Elm.",
+  "main": "index.js",
+  "directories": {
+    "example": "examples",
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "elm-test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/halfzebra/elm-aframe.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/halfzebra/elm-aframe/issues"
+  },
+  "homepage": "https://github.com/halfzebra/elm-aframe#readme",
+  "devDependencies": {
+    "elm-test": "^0.18.6"
+  }
+}
