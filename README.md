@@ -1,4 +1,4 @@
-# Elm integration for A-Frame
+# Elm integration for A-Frame [![Build Status](https://travis-ci.org/halfzebra/elm-aframe.svg?branch=master)](https://travis-ci.org/halfzebra/elm-aframe)
 
 This module brings declarative WebVR framework [A-Frame](https://aframe.io/) to Elm.
 

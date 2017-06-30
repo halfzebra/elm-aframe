@@ -1,0 +1,28 @@
+language: node_js
+
+node_js:
+  - '6'
+
+cache:
+  directories:
+    - $HOME/.cpus
+    - $TRAVIS_BUILD_DIR/node_modules
+
+before_install:
+  # Install sysconfcpus
+  # Reference: https://github.com/elm-lang/elm-compiler/issues/1473#issuecomment-245704142
+  - |
+    export PATH=$HOME/.cpus/bin:$PATH;
+    if ! hash sysconfcpus 2>/dev/null; then
+      git clone --depth=1 https://github.com/obmarg/libsysconfcpus.git "$HOME/libsysconfcpus";
+      cd "$HOME/libsysconfcpus";
+      ./configure --prefix="$HOME/.cpus";
+      make -j2 install;
+    fi
+  # Prepare working directory
+  - cd "$TRAVIS_BUILD_DIR"
+  - export PATH=./node_modules/.bin:$PATH
+
+# Build
+script:
+  - sysconfcpus -n 2 npm run test
