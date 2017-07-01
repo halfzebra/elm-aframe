@@ -21,6 +21,7 @@ import Html exposing (Attribute)
 import Html.Attributes exposing (attribute)
 import Color exposing (green, Color)
 import Color.Convert exposing (colorToHex)
+import Math.Vector3 as Vector3 exposing (Vec3)
 
 
 -- Mesh attributes
@@ -63,13 +64,17 @@ roughness value =
 
 
 {-| -}
-translate : Float -> Float -> Float -> Attribute msg
-translate x y z =
-    [ x, y, z ]
-        |> List.map toString
-        |> List.intersperse " "
-        |> String.concat
-        |> attribute "translate"
+translate : Vec3 -> Attribute msg
+translate position =
+    let
+        ( x, y, z ) =
+            Vector3.toTuple position
+    in
+        [ x, y, z ]
+            |> List.map toString
+            |> List.intersperse " "
+            |> String.concat
+            |> attribute "translate"
 
 
 {-| -}
@@ -101,33 +106,45 @@ radiusBottom value =
 
 
 {-| -}
-position : Float -> Float -> Float -> Attribute msg
-position x y z =
-    [ x, y, z ]
-        |> List.map toString
-        |> List.intersperse " "
-        |> String.concat
-        |> attribute "position"
+position : Vec3 -> Attribute msg
+position pos =
+    let
+        ( x, y, z ) =
+            Vector3.toTuple pos
+    in
+        [ x, y, z ]
+            |> List.map toString
+            |> List.intersperse " "
+            |> String.concat
+            |> attribute "position"
 
 
 {-| -}
-scale : Float -> Float -> Float -> Attribute msg
-scale x y z =
-    [ x, y, z ]
-        |> List.map toString
-        |> List.intersperse " "
-        |> String.concat
-        |> attribute "scale"
+scale : Vec3 -> Attribute msg
+scale vector =
+    let
+        ( x, y, z ) =
+            Vector3.toTuple vector
+    in
+        [ x, y, z ]
+            |> List.map toString
+            |> List.intersperse " "
+            |> String.concat
+            |> attribute "scale"
 
 
 {-| -}
-rotation : Float -> Float -> Float -> Attribute msg
-rotation x y z =
-    [ x, y, z ]
-        |> List.map toString
-        |> List.intersperse " "
-        |> String.concat
-        |> attribute "rotation"
+rotation : Vec3 -> Attribute msg
+rotation vector =
+    let
+        ( x, y, z ) =
+            Vector3.toTuple vector
+    in
+        [ x, y, z ]
+            |> List.map toString
+            |> List.intersperse " "
+            |> String.concat
+            |> attribute "rotation"
 
 
 {-| -}

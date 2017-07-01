@@ -10,6 +10,9 @@ module AFrame.Animations
         , from
         , repeat
         , to
+        , Fill(..)
+        , Direction(..)
+        , Repeat(..)
         )
 
 {-| This module provides a set of functions for declaring A-Frame animations.
@@ -20,10 +23,37 @@ module AFrame.Animations
 # Animation attributes
 @docs attribute_, begin, direction, dur, easing, fill, from, repeat, to
 
+# Types
+@docs Fill, Direction, Repeat
+
 -}
 
 import Html exposing (node, Html, Attribute)
 import Html.Attributes exposing (attribute)
+import Math.Vector3 as Vector3 exposing (Vec3)
+
+
+{-| -}
+type Direction
+    = Alternate
+    | AlternateReverse
+    | Normal
+    | Reverse
+
+
+{-| -}
+type Fill
+    = Backwards
+    | Both
+    | Forwards
+    | None
+
+
+{-| -}
+type Repeat
+    = Times Int
+    | Repeat
+    | Indefinite
 
 
 {-| Animation declaration.
@@ -33,9 +63,9 @@ import Html.Attributes exposing (attribute)
         [ animation
             [ attribute "rotation"
             , dur 10000
-            , fill "forwards"
-            , to "0 360 0"
-            , repeat "indefinite"
+            , fill Fill.Forward
+            , to 0 360 0
+            , repeat Repeat.Indefinite
             ]
             []
         ]
@@ -68,9 +98,22 @@ begin value =
 
     animation [ direction "reverse" ] []
 -}
-direction : String -> Attribute msg
+direction : Direction -> Attribute msg
 direction value =
-    attribute "direction" value
+    (case value of
+        Alternate ->
+            "alternate"
+
+        AlternateReverse ->
+            "alternateReverse"
+
+        Normal ->
+            "normal"
+
+        Reverse ->
+            "reverse"
+    )
+        |> attribute "direction"
 
 
 {-| Duration in (milliseconds) of the animation.
@@ -96,33 +139,72 @@ easing value =
 
     animation [ fill "rotation" ] []
 -}
-fill : String -> Attribute msg
+fill : Fill -> Attribute msg
 fill value =
-    attribute "fill" value
+    (case value of
+        Backwards ->
+            "backwards"
+
+        Both ->
+            "both"
+
+        Forwards ->
+            "forwards"
+
+        None ->
+            "none"
+    )
+        |> attribute "fill"
 
 
 {-| Starting value.
 
     animation [ from "0 120 0" ] []
 -}
-from : String -> Attribute msg
-from value =
-    attribute "from" value
+from : Vec3 -> Attribute msg
+from position =
+    let
+        ( x, y, z ) =
+            Vector3.toTuple position
+    in
+        [ x, y, z ]
+            |> List.map toString
+            |> List.intersperse " "
+            |> String.concat
+            |> attribute "from"
 
 
 {-| Repeat count or indefinite.
 
     animation [ repeat "5000" ] []
 -}
-repeat : String -> Attribute msg
+repeat : Repeat -> Attribute msg
 repeat value =
-    attribute "repeat" value
+    (case value of
+        Times n ->
+            toString n
+
+        Repeat ->
+            "repeat"
+
+        Indefinite ->
+            "indefinite"
+    )
+        |> attribute "repeat"
 
 
 {-| Ending value. Must be specified.
 
     animation [ to "0 360 0" ] []
 -}
-to : String -> Attribute msg
-to value =
-    attribute "to" value
+to : Vec3 -> Attribute msg
+to position =
+    let
+        ( x, y, z ) =
+            Vector3.toTuple position
+    in
+        [ x, y, z ]
+            |> List.map toString
+            |> List.intersperse " "
+            |> String.concat
+            |> attribute "to"

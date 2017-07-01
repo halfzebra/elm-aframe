@@ -2,6 +2,7 @@ module Geom exposing (..)
 
 import MyColor exposing (..)
 import Html exposing (..)
+import Math.Vector3 exposing (vec3)
 import AFrame.Animations
     exposing
         ( animation
@@ -11,6 +12,8 @@ import AFrame.Animations
         , fill
         , to
         , repeat
+        , Fill(..)
+        , Repeat(..)
         )
 import AFrame.Primitives exposing (box, cylinder)
 import AFrame.Primitives.Attributes
@@ -37,7 +40,7 @@ heightFromPrismRadius radius =
 
 
 cursorbox =
-    box [ position 0 0 2 ] []
+    box [ position (vec3 0 0 2) ] []
 
 
 switchon : String -> String -> Html.Attribute msg -> Html.Attribute msg
@@ -61,65 +64,65 @@ logo msg model =
             [ attribute_ "rotation"
             , dur 10000
             , easing "linear"
-            , fill "forwards"
-            , to "0 360 0"
-            , repeat "10000"
+            , fill Forwards
+            , to (vec3 0 360 0)
+            , repeat (Times 10000)
             ]
             []
         , cylinder
             [ radius 1
             , segmentsRadial 3
-            , scale (heightFromPrismRadius 1) 1 1
+            , scale (vec3 (heightFromPrismRadius 1) 1 1)
             , switchon "bottom-blue" model.active (color blue)
-            , rotation -90 0 0
-            , position 0 0 0
+            , rotation (vec3 -90 0 0)
+            , position (vec3 0 0 0)
             , onClick (msg "bottom-blue")
             ]
             []
         , cylinder
             [ radius 1
             , segmentsRadial 3
-            , scale (heightFromPrismRadius ((sqrt 2) / 2)) 1 ((sqrt 2) / 2)
+            , scale (vec3 (heightFromPrismRadius ((sqrt 2) / 2)) 1 ((sqrt 2) / 2))
             , color blue
-            , rotation -135 -90 90
-            , position 1 2 0
+            , rotation (vec3 -135 -90 90)
+            , position (vec3 1 2 0)
             , onClick (msg "top-blue")
             ]
             []
         , cylinder
             [ radius 1
             , segmentsRadial 3
-            , scale (heightFromPrismRadius 1) 1 1
+            , scale (vec3 (heightFromPrismRadius 1) 1 1)
             , color grey
-            , rotation 0 90 90
-            , position -1 1 0
+            , rotation (vec3 0 90 90)
+            , position (vec3 -1 1 0)
             ]
             []
         , cylinder
             [ radius 1
             , segmentsRadial 3
-            , scale (heightFromPrismRadius 0.5) 1 0.5
+            , scale (vec3 (heightFromPrismRadius 0.5) 1 0.5)
             , color orange
-            , rotation 0 -90 90
-            , position 1.25 0.25 0
+            , rotation (vec3 0 -90 90)
+            , position (vec3 1.25 0.25 0)
             ]
             []
         , cylinder
             [ radius 1
             , segmentsRadial 3
-            , scale (heightFromPrismRadius 0.5) 1 0.5
+            , scale (vec3 (heightFromPrismRadius 0.5) 1 0.5)
             , color orange
-            , rotation 90 -90 90
-            , position 0 1.5 0
+            , rotation (vec3 90 -90 90)
+            , position (vec3 0 1.5 0)
             ]
             []
         , cylinder
             [ radius 1
             , segmentsRadial 4
-            , scale 0.75 1 0.75
+            , scale (vec3 0.75 1 0.75)
             , color green
-            , rotation 90 -90 90
-            , position 0.75 1 0
+            , rotation (vec3 90 -90 90)
+            , position (vec3 0.75 1 0)
             ]
             []
         , entity
@@ -127,19 +130,19 @@ logo msg model =
             [ cylinder
                 [ radius 1
                 , segmentsRadial 3
-                , scale (heightFromPrismRadius 0.5) 1 0.5
+                , scale (vec3 (heightFromPrismRadius 0.5) 1 0.5)
                 , color green
-                , rotation -90 90 90
-                , position 0 2 0
+                , rotation (vec3 -90 90 90)
+                , position (vec3 0 2 0)
                 ]
                 []
             , cylinder
                 [ radius 1
                 , segmentsRadial 3
-                , scale (heightFromPrismRadius 0.5) 1 0.5
+                , scale (vec3 (heightFromPrismRadius 0.5) 1 0.5)
                 , color green
-                , rotation 90 -90 90
-                , position -0.75 2.25 0
+                , rotation (vec3 90 -90 90)
+                , position (vec3 -0.75 2.25 0)
                 ]
                 []
             ]

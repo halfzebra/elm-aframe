@@ -2,6 +2,7 @@ module Main exposing (..)
 
 import Html exposing (Html)
 import Color exposing (rgb)
+import Math.Vector3 exposing (vec3)
 import AFrame exposing (scene, entity)
 import AFrame.Primitives exposing (sphere, box, cylinder, plane, sky)
 import AFrame.Primitives.Attributes
@@ -21,13 +22,13 @@ main =
     scene
         []
         [ sphere
-            [ position 0 1.25 -1
+            [ position (vec3 0 1.25 -1)
             , radius 1.25
             , color (rgb 240 173 0)
             ]
             []
         , box
-            [ position -1 0.5 1
+            [ position (vec3 -1 0.5 1)
             , radius 0.5
             , width 1
             , height 1.5
@@ -36,14 +37,14 @@ main =
             ]
             []
         , cylinder
-            [ position 1 0.75 1
+            [ position (vec3 1 0.75 1)
             , radius 0.5
             , height 1.5
             , color (rgb 6 181 204)
             ]
             []
         , plane
-            [ rotation -90 0 0
+            [ rotation (vec3 -90 0 0)
             , width 4
             , height 4
             , color (rgb 90 99 120)
