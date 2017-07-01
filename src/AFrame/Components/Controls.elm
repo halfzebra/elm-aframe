@@ -69,5 +69,23 @@ gearvrControls : List Property -> Attribute msg
 gearvrControls properties =
     properties
         |> List.map propertyToString
-        |> String.join ""
+        |> String.join "; "
         |> attribute "gearvr-controls"
+
+
+{-| -}
+viveControls : List Property -> Attribute msg
+viveControls properties =
+    properties
+        |> List.map propertyToString
+        |> String.join "; "
+        |> attribute "vive-controls"
+
+
+{-| -}
+oculusTouchControls : List Property -> Attribute msg
+oculusTouchControls properties =
+    properties
+        |> List.map propertyToString
+        |> String.join "; "
+        |> attribute "oculus-touch-controls"
