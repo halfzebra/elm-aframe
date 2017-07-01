@@ -41,7 +41,7 @@ type Fill
 
 
 type Repeat
-    = Number Int
+    = Times Int
     | Repeat
     | Indefinite
 
