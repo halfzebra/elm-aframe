@@ -19,7 +19,7 @@ module AFrame.Primitives.Attributes exposing (..)
 import String exposing (toLower)
 import Html exposing (Attribute)
 import Html.Attributes exposing (attribute)
-import Color exposing (green, Color)
+import Color exposing (Color)
 import Color.Convert exposing (colorToHex)
 
 
