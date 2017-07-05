@@ -30,7 +30,7 @@ type Property
     | ButtonColor Color
     | ButtonTouchedColor Color
     | ButtonHighlightColor Color
-    | Hand (Maybe Hand)
+    | Hand Hand
     | Model Bool
     | RotationOffset Float
 
@@ -51,15 +51,7 @@ propertyToString property =
             "buttonHightlightColor: " ++ (colorToHex value)
 
         Hand value ->
-            case value of
-                Just Left ->
-                    "hand: left"
-
-                Just Right ->
-                    "hand: right"
-
-                Nothing ->
-                    ""
+            "hand: " ++ ((String.toLower << toString) value)
 
         Model value ->
             "model: " ++ ((String.toLower << toString) value)
