@@ -1,8 +1,9 @@
 module Main exposing (..)
 
-import Html exposing (Html)
+import Html exposing (Html, text, div, img)
 import Color exposing (rgb)
 import AFrame exposing (scene, entity)
+import AFrame.Primitives.Camera exposing (camera, wasdControlsEnabled)
 import AFrame.Primitives exposing (sphere, box, cylinder, plane, sky)
 import AFrame.Primitives.Attributes
     exposing
@@ -16,11 +17,41 @@ import AFrame.Primitives.Attributes
         )
 
 
-main : Html msg
-main =
+---- MODEL ----
+
+
+type alias Model =
+    {}
+
+
+init : ( Model, Cmd Msg )
+init =
+    ( {}, Cmd.none )
+
+
+
+---- UPDATE ----
+
+
+type Msg
+    = NoOp
+
+
+update : Msg -> Model -> ( Model, Cmd Msg )
+update msg model =
+    ( model, Cmd.none )
+
+
+
+---- VIEW ----
+
+
+view : Model -> Html Msg
+view model =
     scene
         []
-        [ sphere
+        [ camera [ wasdControlsEnabled False, position 0 0 5 ] []
+        , sphere
             [ position 0 1.25 -1
             , radius 1.25
             , color (rgb 240 173 0)
@@ -53,3 +84,17 @@ main =
             []
             []
         ]
+
+
+
+---- PROGRAM ----
+
+
+main : Program Never Model Msg
+main =
+    Html.program
+        { view = view
+        , init = init
+        , update = update
+        , subscriptions = always Sub.none
+        }
