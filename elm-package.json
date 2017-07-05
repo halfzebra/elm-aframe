@@ -1,5 +1,5 @@
 {
-    "version": "3.0.0",
+    "version": "3.1.0",
     "summary": "Elm integration for A-Frame",
     "repository": "https://github.com/halfzebra/elm-aframe.git",
     "license": "MIT",
