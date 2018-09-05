@@ -2,6 +2,8 @@
 
 This module brings declarative WebVR framework [A-Frame](https://aframe.io/) to Elm.
 
+:warning: Highly experimental, since it depends on external JavaScript library. 
+
 ## Tutorials
 
 [Simple VR with Elm and A-Frame](https://github.com/tilmans/elm-aframe-example) by [@tilmans](https://github.com/tilmans)
